@@ -1,0 +1,14 @@
+
+Belirli bir klasöre migration ekleme
+add-migration InitialCreate -outputDir Migrations
+
+
+Kurulacak nugetler
+DataAccess'e
+EntityFramework Core
+EntityFramework SqlServer
+EntityFramework Desing
+EntityFramework Tool
+
+UI Katmanýna 
+EntityFramework Desing

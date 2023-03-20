@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}      
+@model WorkCreateDto
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto d-block">
+             
+            <form method="post" asp-action="Create" >
+
+                <div class="mb-3">
+                    <label>Defination</label>
+                    <input type="text" asp-for="@Model.Definition"  class="form-control"/>
+                </div>
+
+
+                <div class="mb-3">
+                    <label>IsCompleted</label>
+                    <input type="text" asp-for="@Model.IsCompleted" class="form-control" />
+                </div>
+
+
+                <div class="mb-3">
+                    <button class="btn btn-success">
+                        Kaydı Tamamla
+                    </button>
+                </div>
+                <div asp-validation-summary="All" class="text-danger">
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
