@@ -7,9 +7,9 @@ namespace TodoAppNTier.DataAccess.Interfaces
     {
         Task<List<T>> GetAll();
         Task<T> GetByFilter(Expression<Func<T, bool>> filter, bool asNoTracking = false);
-        Task<T> GetById(object id);
+        Task<T> Find(object id);
         Task Create(T entity);
-        void Update(T entity);
+        void Update(T entity, T unchanged);
         void Remove(T entity);
         IQueryable<T> GetQueryable();
     }

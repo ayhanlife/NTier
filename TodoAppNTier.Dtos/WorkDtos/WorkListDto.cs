@@ -1,6 +1,8 @@
-﻿namespace TodoAppNTier.Dtos.WorkDtos
+﻿using TodoAppNTier.Dtos.Interfaces;
+
+namespace TodoAppNTier.Dtos.WorkDtos
 {
-    public class WorkListDto
+    public class WorkListDto: IDto
     {
         public int Id { get; set; }
         public string Definition { get; set; }

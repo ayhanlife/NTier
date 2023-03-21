@@ -23,6 +23,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseStatusCodePagesWithReExecute("/Home/NotFound", "?code{0}");
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

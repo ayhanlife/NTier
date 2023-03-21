@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TodoAppNTier.Dtos.Interfaces;
 
 namespace TodoAppNTier.Dtos.WorkDtos
 {
-    public class WorkCreateDto
+    public class WorkCreateDto : IDto
     {
 
         [Required]

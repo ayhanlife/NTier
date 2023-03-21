@@ -38,7 +38,7 @@ namespace TodoAppNTier.DataAccess.Repositories
                  : await context.Set<T>().AsNoTracking().SingleOrDefaultAsync(filter);
         }
 
-        public async Task<T> GetById(object id)
+        public async Task<T> Find(object id)
         {
             return await context.Set<T>().FindAsync(id);
         }
@@ -50,13 +50,14 @@ namespace TodoAppNTier.DataAccess.Repositories
 
         public void Remove(T entity)
         {
+            //var deletedEntity = context.Set<T>().Find(entity);
             context.Set<T>().Remove(entity);
         }
 
-        public void Update(T entity)
+        public void Update(T entity, T unchanged) // 
         {
-            var updateEntity = context.Set<T>().Find(entity.Id);
-            context.Entry(updateEntity).CurrentValues.SetValues(entity);
+            //var updateEntity = context.Set<T>().Find(entity.Id);
+            context.Entry(unchanged).CurrentValues.SetValues(entity);
 
             //context.Set<T>().Update(entity);
         }

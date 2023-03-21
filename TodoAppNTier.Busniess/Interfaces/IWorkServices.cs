@@ -1,13 +1,18 @@
-﻿using TodoAppNTier.Dtos.WorkDtos;
+﻿using TodoAppNTier.Common.ResponseObjects;
+using TodoAppNTier.Dtos.WorkDtos;
 
 namespace TodoAppNTier.Busniess.Interfaces
 {
     public interface IWorkServices
     {
-        Task<List<WorkListDto>> GetAll();
-        Task Create(WorkCreateDto dto);
-        Task<WorkListDto> GetById(object id);
-        Task Remove(object id);
-        Task Updated(WorkUpdateDto dto);
+        Task<IResponse<List<WorkListDto>>> GetAll();
+
+        Task<IResponse<WorkCreateDto>> Create(WorkCreateDto dto);
+
+        Task<IResponse<IDto>> GetById<IDto>(int id);
+        
+        Task<IResponse> Remove(object id);
+        
+        Task<IResponse<WorkUpdateDto>> Updated(WorkUpdateDto dto);
     }
 }
